@@ -8,7 +8,8 @@
     "start": "next start -p 3000",
     "lint": "next lint",
     "test": "echo 'No web tests configured yet'",
-    "screenshots": "node scripts/capture-ui-previews.mjs"
+    "screenshots": "node scripts/capture-ui-previews.mjs",
+    "smoke": "node scripts/smoke-routes.mjs"
   },
   "dependencies": {
     "@tanstack/react-query": "^5.52.2",
