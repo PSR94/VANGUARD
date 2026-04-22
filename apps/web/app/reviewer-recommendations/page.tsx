@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { apiGet } from "@/lib/api/client";
 
 type ReviewerRecommendation = {
@@ -15,8 +15,10 @@ type PR = { id: string; title: string };
 export default function ReviewerRecommendationsPage() {
   const [data, setData] = useState<{ pr: PR; reviewers: ReviewerRecommendation[] } | null>(null);
   const [loading, setLoading] = useState(true);
+  const hasLoaded = useRef(false);
 
   async function loadData() {
+    setLoading(true);
     try {
       const prs = await apiGet<PR[]>("/api/v1/pull-requests");
       const selected = prs[0];
@@ -27,8 +29,16 @@ export default function ReviewerRecommendationsPage() {
     }
   }
 
+  useEffect(() => {
+    if (hasLoaded.current) {
+      return;
+    }
+
+    hasLoaded.current = true;
+    void loadData();
+  }, []);
+
   if (loading && !data) {
-    loadData();
     return <div>Loading...</div>;
   }
 

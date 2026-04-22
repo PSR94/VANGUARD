@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { apiGet, apiPost } from "@/lib/api/client";
 
 type AuditEvent = {
@@ -18,8 +18,10 @@ export default function AuditLogPage() {
   const [loading, setLoading] = useState(true);
   const [filterActor, setFilterActor] = useState("");
   const [filterAction, setFilterAction] = useState("");
+  const hasLoaded = useRef(false);
 
   async function loadAudit() {
+    setLoading(true);
     try {
       await apiPost("/api/v1/evals/run");
       const audit = await apiGet<AuditEvent[]>("/api/v1/audit");
@@ -29,8 +31,16 @@ export default function AuditLogPage() {
     }
   }
 
+  useEffect(() => {
+    if (hasLoaded.current) {
+      return;
+    }
+
+    hasLoaded.current = true;
+    void loadAudit();
+  }, []);
+
   if (loading && events.length === 0) {
-    loadAudit();
     return <div>Loading audit events...</div>;
   }
 
@@ -109,4 +119,3 @@ export default function AuditLogPage() {
     </section>
   );
 }
-
