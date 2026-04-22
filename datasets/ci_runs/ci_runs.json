@@ -1,0 +1,31 @@
+[
+  {
+    "pr_id": "PR-3412",
+    "pipeline": "payments-ci",
+    "status": "unstable",
+    "jobs": [
+      {"name": "unit-tests", "status": "passed", "duration_sec": 210, "retries": 0},
+      {"name": "integration-tests", "status": "failed", "duration_sec": 610, "retries": 1, "failure_summary": "timeout contacting sandbox gateway"},
+      {"name": "lint", "status": "passed", "duration_sec": 90, "retries": 0}
+    ]
+  },
+  {
+    "pr_id": "PR-3413",
+    "pipeline": "auth-gateway-ci",
+    "status": "failed",
+    "jobs": [
+      {"name": "auth-smoke", "status": "failed", "duration_sec": 180, "retries": 2, "failure_summary": "401 mismatch against token introspection contract"},
+      {"name": "policy-check", "status": "passed", "duration_sec": 45, "retries": 0},
+      {"name": "static-scan", "status": "failed", "duration_sec": 130, "retries": 0, "failure_summary": "critical rule: missing audience claim validation"}
+    ]
+  },
+  {
+    "pr_id": "PR-3414",
+    "pipeline": "platform-core-ci",
+    "status": "passed",
+    "jobs": [
+      {"name": "unit-tests", "status": "passed", "duration_sec": 140, "retries": 0},
+      {"name": "observability-regression", "status": "passed", "duration_sec": 110, "retries": 0}
+    ]
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "id": "POL-CRIT-PAYMENTS-APPROVAL",
+    "name": "Critical payment path requires platform approval",
+    "kind": "approval",
+    "severity": "high",
+    "condition": {
+      "path_prefix": "services/payments",
+      "required_team": "team-platform"
+    }
+  },
+  {
+    "id": "POL-AUTH-CONFIG-SECURITY",
+    "name": "Auth configuration changes require security approval",
+    "kind": "approval",
+    "severity": "critical",
+    "condition": {
+      "path_prefix": "configs/auth",
+      "required_team": "team-security"
+    }
+  },
+  {
+    "id": "POL-HIGH-RISK-BLOCKER",
+    "name": "Release blocked for unresolved high-risk PR without override",
+    "kind": "release_blocker",
+    "severity": "critical",
+    "condition": {
+      "min_risk_score": 75,
+      "requires_override": true
+    }
+  }
+]

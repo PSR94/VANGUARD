@@ -1,0 +1,29 @@
+[
+  {
+    "pr_id": "PR-3412",
+    "coverage_delta": -3.4,
+    "flaky_tests": ["test_retry_backoff_window"],
+    "failed_tests": ["test_integration_recovery_path"],
+    "suggested_tests": [
+      "Add contract test for payment retry timeout boundary",
+      "Add fault-injection test for gateway 429 bursts"
+    ]
+  },
+  {
+    "pr_id": "PR-3413",
+    "coverage_delta": -7.8,
+    "flaky_tests": [],
+    "failed_tests": ["test_jwt_audience_enforcement", "test_rotating_key_fallback"],
+    "suggested_tests": [
+      "Add e2e token exchange scenario with expired signing key",
+      "Add negative test for invalid audience token"
+    ]
+  },
+  {
+    "pr_id": "PR-3414",
+    "coverage_delta": 1.9,
+    "flaky_tests": [],
+    "failed_tests": [],
+    "suggested_tests": []
+  }
+]

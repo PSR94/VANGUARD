@@ -1,0 +1,18 @@
+[
+  {
+    "id": "REL-2026.04.3",
+    "name": "April Week 3 Release Train",
+    "status": "candidate",
+    "target_date": "2026-04-23",
+    "pr_ids": ["PR-3412", "PR-3413", "PR-3414"],
+    "approvals": [
+      {"team": "team-platform", "required": true, "approved": true, "actor": "pavel"},
+      {"team": "team-security", "required": true, "approved": false, "actor": null}
+    ],
+    "override": {
+      "active": false,
+      "actor": null,
+      "rationale": null
+    }
+  }
+]

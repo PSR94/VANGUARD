@@ -1,0 +1,22 @@
+[
+  {
+    "team": "team-payments",
+    "reviewers": ["maya", "liam", "sofia"],
+    "paths": ["services/payments", "infra/terraform/payments", "configs/payment"]
+  },
+  {
+    "team": "team-security",
+    "reviewers": ["nora", "ahmed", "kevin"],
+    "paths": ["services/auth", "security", "configs/auth"]
+  },
+  {
+    "team": "team-platform",
+    "reviewers": ["pavel", "taylor", "john"],
+    "paths": ["platform", "release", "ci"]
+  },
+  {
+    "team": "team-sre",
+    "reviewers": ["dina", "ray", "marta"],
+    "paths": ["observability", "ops", "deploy"]
+  }
+]

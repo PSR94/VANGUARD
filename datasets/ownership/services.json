@@ -1,0 +1,30 @@
+[
+  {
+    "id": "svc-payments",
+    "name": "payments",
+    "tier": "critical",
+    "owner_team": "team-payments",
+    "oncall": "payments-oncall"
+  },
+  {
+    "id": "svc-auth",
+    "name": "auth",
+    "tier": "critical",
+    "owner_team": "team-security",
+    "oncall": "security-oncall"
+  },
+  {
+    "id": "svc-release-control",
+    "name": "release-control",
+    "tier": "high",
+    "owner_team": "team-platform",
+    "oncall": "platform-oncall"
+  },
+  {
+    "id": "svc-observability",
+    "name": "observability",
+    "tier": "high",
+    "owner_team": "team-sre",
+    "oncall": "sre-oncall"
+  }
+]

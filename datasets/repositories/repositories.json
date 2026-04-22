@@ -1,0 +1,23 @@
+[
+  {
+    "id": "repo-platform-core",
+    "name": "platform-core",
+    "default_branch": "main",
+    "language": "python",
+    "criticality": "high"
+  },
+  {
+    "id": "repo-payments-api",
+    "name": "payments-api",
+    "default_branch": "main",
+    "language": "typescript",
+    "criticality": "critical"
+  },
+  {
+    "id": "repo-auth-gateway",
+    "name": "auth-gateway",
+    "default_branch": "main",
+    "language": "go",
+    "criticality": "critical"
+  }
+]
