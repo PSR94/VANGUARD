@@ -383,6 +383,8 @@ curl http://localhost:8080/api/v1/pull-requests
 open http://localhost:3000
 ```
 
+The default local CORS configuration allows both `http://localhost:3000` and `http://127.0.0.1:3000`. If you override `API_CORS_ORIGINS`, keep both entries unless you intentionally want a stricter local setup.
+
 ## Repository Structure
 
 ```text
