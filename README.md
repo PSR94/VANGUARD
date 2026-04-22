@@ -316,10 +316,10 @@ Override requests require actor and rationale and are audit-logged.
 
 ## UI Preview Assets
 
-- Dashboard: ![Dashboard](docs/assets/ui-preview-dashboard.svg)
-- PR Workspace: ![PR Workspace](docs/assets/ui-preview-pr-workspace.svg)
-- Release Center: ![Release Center](docs/assets/ui-preview-release-center.svg)
-- Policy Center: ![Policy Center](docs/assets/ui-preview-policy-center.svg)
+- Dashboard: ![Dashboard](docs/assets/screenshots/dashboard.png)
+- PR Workspace: ![PR Workspace](docs/assets/screenshots/pr-workspace.png)
+- Release Center: ![Release Center](docs/assets/screenshots/release-center.png)
+- Policy Center: ![Policy Center](docs/assets/screenshots/policy-center.png)
 
 ## API Overview
 
