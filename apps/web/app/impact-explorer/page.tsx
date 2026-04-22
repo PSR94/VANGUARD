@@ -16,7 +16,12 @@ export default async function ImpactExplorerPage() {
         <h4 className="font-semibold">Traversal Edges</h4>
         <ul className="mt-2 space-y-1 text-sm">
           {graph.edges.map((edge) => (
-            <li key={`${edge.from}-${edge.to}-${edge.type}`}>{edge.from} -[{edge.type}]-> {edge.to} (depth {edge.depth})</li>
+            <li key={`${edge.from}-${edge.to}-${edge.type}`}>
+              {edge.from} {" -["}
+              {edge.type}
+              {"]-> "}
+              {edge.to} (depth {edge.depth})
+            </li>
           ))}
         </ul>
       </div>
