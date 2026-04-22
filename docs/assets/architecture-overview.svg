@@ -1,0 +1,107 @@
+<svg width="1400" height="860" viewBox="0 0 1400 860" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="118" y1="54" x2="1290" y2="842" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#F7FBFF"/>
+      <stop offset="0.52" stop-color="#EEF6FF"/>
+      <stop offset="1" stop-color="#FFF9EF"/>
+    </linearGradient>
+    <linearGradient id="topBar" x1="204" y1="162" x2="1188" y2="162" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#145DA0"/>
+      <stop offset="1" stop-color="#2E8BC0"/>
+    </linearGradient>
+    <linearGradient id="apiBar" x1="246" y1="350" x2="1152" y2="350" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0C2D48"/>
+      <stop offset="1" stop-color="#145DA0"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="18" stdDeviation="16" flood-color="#0F172A" flood-opacity="0.12"/>
+    </filter>
+    <marker id="arrow" markerWidth="14" markerHeight="14" refX="10" refY="7" orient="auto">
+      <path d="M0 0L14 7L0 14V0Z" fill="#0C2D48"/>
+    </marker>
+  </defs>
+
+  <rect width="1400" height="860" rx="30" fill="url(#bg)"/>
+  <circle cx="1238" cy="102" r="176" fill="#CDE8FF" fill-opacity="0.58"/>
+  <circle cx="166" cy="748" r="188" fill="#FFE6B3" fill-opacity="0.54"/>
+  <circle cx="1310" cy="738" r="108" fill="#D2F4E6" fill-opacity="0.72"/>
+
+  <text x="92" y="92" fill="#0C2D48" font-size="42" font-family="Avenir Next, Segoe UI, sans-serif" font-weight="800">VANGUARD Architecture</text>
+  <text x="92" y="128" fill="#4B6478" font-size="20" font-family="Avenir Next, Segoe UI, sans-serif">A layered control plane for pull request intelligence, release governance, and operational evidence.</text>
+
+  <g filter="url(#shadow)">
+    <rect x="80" y="166" width="1240" height="124" rx="28" fill="white"/>
+    <rect x="100" y="186" width="1200" height="84" rx="22" fill="url(#topBar)"/>
+
+    <rect x="138" y="206" width="248" height="44" rx="16" fill="#D7ECFF"/>
+    <text x="179" y="234" fill="#0B4F7A" font-size="24" font-family="Avenir Next, Segoe UI, sans-serif" font-weight="700">Operator Surfaces</text>
+
+    <rect x="470" y="206" width="154" height="44" rx="16" fill="#FFF1CD"/>
+    <text x="504" y="234" fill="#B45309" font-size="22" font-family="Avenir Next, Segoe UI, sans-serif" font-weight="700">Dashboard</text>
+    <rect x="646" y="206" width="188" height="44" rx="16" fill="#D1F3E2"/>
+    <text x="681" y="234" fill="#16614A" font-size="22" font-family="Avenir Next, Segoe UI, sans-serif" font-weight="700">PR Workspace</text>
+    <rect x="854" y="206" width="178" height="44" rx="16" fill="#FFE1D8"/>
+    <text x="888" y="234" fill="#C2410C" font-size="22" font-family="Avenir Next, Segoe UI, sans-serif" font-weight="700">Release Center</text>
+    <rect x="1052" y="206" width="196" height="44" rx="16" fill="#E5DFFF"/>
+    <text x="1080" y="234" fill="#5B21B6" font-size="22" font-family="Avenir Next, Segoe UI, sans-serif" font-weight="700">Policy and Audit</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="194" y="316" width="1012" height="150" rx="30" fill="white"/>
+    <rect x="218" y="340" width="964" height="102" rx="22" fill="url(#apiBar)"/>
+    <text x="248" y="394" fill="#F4FAFF" font-size="30" font-family="Avenir Next, Segoe UI, sans-serif" font-weight="800">FastAPI Orchestration Layer</text>
+    <text x="248" y="425" fill="#C5E5FB" font-size="18" font-family="IBM Plex Mono, Menlo, monospace">risk, policy, reviewer, release, health, evals, audit, provider, and graph endpoints</text>
+  </g>
+
+  <line x1="700" y1="292" x2="700" y2="316" stroke="#0C2D48" stroke-width="6" stroke-linecap="round" marker-end="url(#arrow)"/>
+
+  <g filter="url(#shadow)">
+    <rect x="92" y="512" width="284" height="222" rx="28" fill="white"/>
+    <rect x="116" y="536" width="236" height="60" rx="20" fill="#D1F3E2"/>
+    <text x="152" y="572" fill="#16614A" font-size="26" font-family="Avenir Next, Segoe UI, sans-serif" font-weight="800">Intelligence Engines</text>
+    <text x="126" y="626" fill="#27445D" font-size="20" font-family="Avenir Next, Segoe UI, sans-serif" font-weight="700">Risk scoring</text>
+    <text x="126" y="658" fill="#4B6478" font-size="18" font-family="Avenir Next, Segoe UI, sans-serif">Weighted factors, confidence, and rationale.</text>
+    <text x="126" y="696" fill="#27445D" font-size="20" font-family="Avenir Next, Segoe UI, sans-serif" font-weight="700">Policy evaluation</text>
+    <text x="126" y="728" fill="#4B6478" font-size="18" font-family="Avenir Next, Segoe UI, sans-serif">Governance findings and approval gates.</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="404" y="512" width="284" height="222" rx="28" fill="white"/>
+    <rect x="428" y="536" width="236" height="60" rx="20" fill="#D7ECFF"/>
+    <text x="468" y="572" fill="#0B4F7A" font-size="26" font-family="Avenir Next, Segoe UI, sans-serif" font-weight="800">Context Expansion</text>
+    <text x="438" y="626" fill="#27445D" font-size="20" font-family="Avenir Next, Segoe UI, sans-serif" font-weight="700">Impact graph traversal</text>
+    <text x="438" y="658" fill="#4B6478" font-size="18" font-family="Avenir Next, Segoe UI, sans-serif">Service dependencies and blast radius.</text>
+    <text x="438" y="696" fill="#27445D" font-size="20" font-family="Avenir Next, Segoe UI, sans-serif" font-weight="700">Owner enrichment</text>
+    <text x="438" y="728" fill="#4B6478" font-size="18" font-family="Avenir Next, Segoe UI, sans-serif">Team routing and reviewer suggestions.</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="716" y="512" width="284" height="222" rx="28" fill="white"/>
+    <rect x="740" y="536" width="236" height="60" rx="20" fill="#FFE1D8"/>
+    <text x="777" y="572" fill="#C2410C" font-size="26" font-family="Avenir Next, Segoe UI, sans-serif" font-weight="800">Operational Signals</text>
+    <text x="750" y="626" fill="#27445D" font-size="20" font-family="Avenir Next, Segoe UI, sans-serif" font-weight="700">CI and test intelligence</text>
+    <text x="750" y="658" fill="#4B6478" font-size="18" font-family="Avenir Next, Segoe UI, sans-serif">Failures, retries, coverage, and flakes.</text>
+    <text x="750" y="696" fill="#27445D" font-size="20" font-family="Avenir Next, Segoe UI, sans-serif" font-weight="700">Release readiness</text>
+    <text x="750" y="728" fill="#4B6478" font-size="18" font-family="Avenir Next, Segoe UI, sans-serif">Blockers, approvals, and override state.</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="1028" y="512" width="284" height="222" rx="28" fill="white"/>
+    <rect x="1052" y="536" width="236" height="60" rx="20" fill="#FFF1CD"/>
+    <text x="1102" y="572" fill="#B45309" font-size="26" font-family="Avenir Next, Segoe UI, sans-serif" font-weight="800">Data Fabric</text>
+    <text x="1062" y="626" fill="#27445D" font-size="20" font-family="Avenir Next, Segoe UI, sans-serif" font-weight="700">Seeded datasets</text>
+    <text x="1062" y="658" fill="#4B6478" font-size="18" font-family="Avenir Next, Segoe UI, sans-serif">Deterministic local scenarios and fixtures.</text>
+    <text x="1062" y="696" fill="#27445D" font-size="20" font-family="Avenir Next, Segoe UI, sans-serif" font-weight="700">Postgres, Redis, Neo4j, OpenSearch</text>
+    <text x="1062" y="728" fill="#4B6478" font-size="18" font-family="Avenir Next, Segoe UI, sans-serif">Persistence, cache, graph traversal, search.</text>
+  </g>
+
+  <line x1="700" y1="466" x2="700" y2="500" stroke="#0C2D48" stroke-width="6" stroke-linecap="round" marker-end="url(#arrow)"/>
+  <line x1="700" y1="500" x2="234" y2="500" stroke="#0C2D48" stroke-width="4" stroke-linecap="round"/>
+  <line x1="700" y1="500" x2="546" y2="500" stroke="#0C2D48" stroke-width="4" stroke-linecap="round"/>
+  <line x1="700" y1="500" x2="858" y2="500" stroke="#0C2D48" stroke-width="4" stroke-linecap="round"/>
+  <line x1="700" y1="500" x2="1170" y2="500" stroke="#0C2D48" stroke-width="4" stroke-linecap="round"/>
+  <line x1="234" y1="500" x2="234" y2="512" stroke="#0C2D48" stroke-width="4" stroke-linecap="round" marker-end="url(#arrow)"/>
+  <line x1="546" y1="500" x2="546" y2="512" stroke="#0C2D48" stroke-width="4" stroke-linecap="round" marker-end="url(#arrow)"/>
+  <line x1="858" y1="500" x2="858" y2="512" stroke="#0C2D48" stroke-width="4" stroke-linecap="round" marker-end="url(#arrow)"/>
+  <line x1="1170" y1="500" x2="1170" y2="512" stroke="#0C2D48" stroke-width="4" stroke-linecap="round" marker-end="url(#arrow)"/>
+</svg>

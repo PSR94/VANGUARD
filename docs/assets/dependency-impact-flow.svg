@@ -1,0 +1,78 @@
+<svg width="1400" height="740" viewBox="0 0 1400 740" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="152" y1="38" x2="1240" y2="706" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FFF9EF"/>
+      <stop offset="1" stop-color="#EFF7FF"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="18" stdDeviation="16" flood-color="#0F172A" flood-opacity="0.10"/>
+    </filter>
+    <marker id="arrow" markerWidth="14" markerHeight="14" refX="10" refY="7" orient="auto">
+      <path d="M0 0L14 7L0 14V0Z" fill="#0C2D48"/>
+    </marker>
+  </defs>
+
+  <rect width="1400" height="740" rx="30" fill="url(#bg)"/>
+  <text x="88" y="86" fill="#0C2D48" font-size="40" font-family="Avenir Next, Segoe UI, sans-serif" font-weight="800">Dependency Impact Traversal</text>
+  <text x="88" y="122" fill="#4B6478" font-size="20" font-family="Avenir Next, Segoe UI, sans-serif">A bounded expansion from changed files to impacted services, teams, and downstream release risk.</text>
+
+  <g filter="url(#shadow)">
+    <rect x="88" y="192" width="230" height="352" rx="28" fill="white"/>
+    <rect x="112" y="216" width="182" height="58" rx="18" fill="#D7ECFF"/>
+    <text x="155" y="252" fill="#0B4F7A" font-size="26" font-family="Avenir Next, Segoe UI, sans-serif" font-weight="800">Changed Files</text>
+    <rect x="120" y="304" width="158" height="34" rx="17" fill="#EEF6FF"/>
+    <text x="146" y="326" fill="#27445D" font-size="17" font-family="IBM Plex Mono, Menlo, monospace">apps/api/app/main.py</text>
+    <rect x="120" y="352" width="166" height="34" rx="17" fill="#EEF6FF"/>
+    <text x="144" y="374" fill="#27445D" font-size="17" font-family="IBM Plex Mono, Menlo, monospace">policy_service.py</text>
+    <rect x="120" y="400" width="150" height="34" rx="17" fill="#EEF6FF"/>
+    <text x="144" y="422" fill="#27445D" font-size="17" font-family="IBM Plex Mono, Menlo, monospace">release-center.tsx</text>
+    <text x="120" y="484" fill="#4B6478" font-size="18" font-family="Avenir Next, Segoe UI, sans-serif">Seed paths are mapped to services and domain tags.</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="384" y="192" width="300" height="352" rx="28" fill="white"/>
+    <rect x="408" y="216" width="252" height="58" rx="18" fill="#D1F3E2"/>
+    <text x="462" y="252" fill="#16614A" font-size="26" font-family="Avenir Next, Segoe UI, sans-serif" font-weight="800">Bounded Traversal</text>
+    <circle cx="534" cy="386" r="96" fill="#F0FBF6" stroke="#2A9D8F" stroke-width="4"/>
+    <circle cx="534" cy="386" r="58" fill="#D1F3E2"/>
+    <text x="503" y="380" fill="#16614A" font-size="20" font-family="Avenir Next, Segoe UI, sans-serif" font-weight="800">Depth</text>
+    <text x="520" y="409" fill="#16614A" font-size="32" font-family="Avenir Next, Segoe UI, sans-serif" font-weight="800">0-2</text>
+    <text x="432" y="494" fill="#4B6478" font-size="18" font-family="Avenir Next, Segoe UI, sans-serif">Traverse `depends_on`, `calls`, `consumes`, and `publishes_to` edges without exploding the graph.</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="750" y="192" width="250" height="352" rx="28" fill="white"/>
+    <rect x="774" y="216" width="202" height="58" rx="18" fill="#FFE1D8"/>
+    <text x="817" y="252" fill="#C2410C" font-size="26" font-family="Avenir Next, Segoe UI, sans-serif" font-weight="800">Impact Set</text>
+    <rect x="782" y="308" width="154" height="42" rx="18" fill="#FFF0EA"/>
+    <text x="823" y="335" fill="#C2410C" font-size="20" font-family="Avenir Next, Segoe UI, sans-serif" font-weight="700">api-core</text>
+    <rect x="782" y="366" width="178" height="42" rx="18" fill="#FFF0EA"/>
+    <text x="812" y="393" fill="#C2410C" font-size="20" font-family="Avenir Next, Segoe UI, sans-serif" font-weight="700">policy-engine</text>
+    <rect x="782" y="424" width="150" height="42" rx="18" fill="#FFF0EA"/>
+    <text x="811" y="451" fill="#C2410C" font-size="20" font-family="Avenir Next, Segoe UI, sans-serif" font-weight="700">release-ui</text>
+    <text x="782" y="500" fill="#4B6478" font-size="18" font-family="Avenir Next, Segoe UI, sans-serif">The final set becomes the blast-radius evidence shown to operators.</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="1066" y="192" width="246" height="352" rx="28" fill="white"/>
+    <rect x="1090" y="216" width="198" height="58" rx="18" fill="#FFF1CD"/>
+    <text x="1147" y="252" fill="#B45309" font-size="26" font-family="Avenir Next, Segoe UI, sans-serif" font-weight="800">Enrichment</text>
+    <text x="1098" y="326" fill="#27445D" font-size="20" font-family="Avenir Next, Segoe UI, sans-serif" font-weight="700">Owners and approvals</text>
+    <text x="1098" y="360" fill="#4B6478" font-size="18" font-family="Avenir Next, Segoe UI, sans-serif">Attach teams, required approvers, and release-criticality metadata.</text>
+    <rect x="1098" y="412" width="120" height="34" rx="17" fill="#D7ECFF"/>
+    <text x="1122" y="434" fill="#0B4F7A" font-size="16" font-family="IBM Plex Mono, Menlo, monospace">platform</text>
+    <rect x="1228" y="412" width="84" height="34" rx="17" fill="#D1F3E2"/>
+    <text x="1248" y="434" fill="#16614A" font-size="16" font-family="IBM Plex Mono, Menlo, monospace">security</text>
+    <text x="1098" y="500" fill="#4B6478" font-size="18" font-family="Avenir Next, Segoe UI, sans-serif">These enrichments feed risk scoring and approval routing.</text>
+  </g>
+
+  <line x1="318" y1="368" x2="384" y2="368" stroke="#0C2D48" stroke-width="5" stroke-linecap="round" marker-end="url(#arrow)"/>
+  <line x1="684" y1="368" x2="750" y2="368" stroke="#0C2D48" stroke-width="5" stroke-linecap="round" marker-end="url(#arrow)"/>
+  <line x1="1000" y1="368" x2="1066" y2="368" stroke="#0C2D48" stroke-width="5" stroke-linecap="round" marker-end="url(#arrow)"/>
+
+  <g filter="url(#shadow)">
+    <rect x="356" y="592" width="688" height="90" rx="26" fill="#0C2D48"/>
+    <text x="390" y="628" fill="#EAF6FF" font-size="23" font-family="Avenir Next, Segoe UI, sans-serif" font-weight="800">Why it matters</text>
+    <text x="390" y="658" fill="#B7DDF7" font-size="18" font-family="Avenir Next, Segoe UI, sans-serif">Operators can see the hidden radius of a PR before merge or release instead of relying on intuition.</text>
+  </g>
+</svg>

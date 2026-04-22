@@ -1,0 +1,64 @@
+<svg width="1400" height="720" viewBox="0 0 1400 720" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="138" y1="38" x2="1268" y2="688" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FFF8ED"/>
+      <stop offset="1" stop-color="#EFF7FF"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="18" stdDeviation="16" flood-color="#0F172A" flood-opacity="0.10"/>
+    </filter>
+    <marker id="arrow" markerWidth="14" markerHeight="14" refX="10" refY="7" orient="auto">
+      <path d="M0 0L14 7L0 14V0Z" fill="#0C2D48"/>
+    </marker>
+  </defs>
+
+  <rect width="1400" height="720" rx="30" fill="url(#bg)"/>
+  <text x="88" y="84" fill="#0C2D48" font-size="40" font-family="Avenir Next, Segoe UI, sans-serif" font-weight="800">Policy Evaluation Flow</text>
+  <text x="88" y="120" fill="#4B6478" font-size="20" font-family="Avenir Next, Segoe UI, sans-serif">Risk, changed paths, and release context are matched against governance rules before decisions are surfaced.</text>
+
+  <g filter="url(#shadow)">
+    <rect x="88" y="208" width="258" height="264" rx="28" fill="white"/>
+    <rect x="112" y="232" width="210" height="56" rx="18" fill="#D7ECFF"/>
+    <text x="177" y="267" fill="#0B4F7A" font-size="25" font-family="Avenir Next, Segoe UI, sans-serif" font-weight="800">Inputs</text>
+    <text x="120" y="340" fill="#27445D" font-size="20" font-family="Avenir Next, Segoe UI, sans-serif" font-weight="700">Paths, score, and release state</text>
+    <text x="120" y="374" fill="#4B6478" font-size="18" font-family="Avenir Next, Segoe UI, sans-serif">Every evaluation starts from concrete repository and operational evidence.</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="396" y="208" width="260" height="264" rx="28" fill="white"/>
+    <rect x="420" y="232" width="212" height="56" rx="18" fill="#D1F3E2"/>
+    <text x="479" y="267" fill="#16614A" font-size="25" font-family="Avenir Next, Segoe UI, sans-serif" font-weight="800">Ruleset</text>
+    <text x="428" y="340" fill="#27445D" font-size="20" font-family="Avenir Next, Segoe UI, sans-serif" font-weight="700">Critical path and approval rules</text>
+    <text x="428" y="374" fill="#4B6478" font-size="18" font-family="Avenir Next, Segoe UI, sans-serif">Baseline governance is deterministic and inspectable.</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="706" y="178" width="316" height="324" rx="30" fill="white"/>
+    <rect x="730" y="202" width="268" height="60" rx="18" fill="#FFE1D8"/>
+    <text x="778" y="239" fill="#C2410C" font-size="26" font-family="Avenir Next, Segoe UI, sans-serif" font-weight="800">Condition Matcher</text>
+    <text x="738" y="334" fill="#27445D" font-size="20" font-family="Avenir Next, Segoe UI, sans-serif" font-weight="700">Path, risk, and actor evaluation</text>
+    <text x="738" y="368" fill="#4B6478" font-size="18" font-family="Avenir Next, Segoe UI, sans-serif">Determine whether the current PR or release violates a gate, needs approval, or can pass cleanly.</text>
+    <rect x="738" y="418" width="134" height="30" rx="15" fill="#FFF1CD"/>
+    <text x="764" y="438" fill="#9A6700" font-size="14" font-family="IBM Plex Mono, Menlo, monospace">blocked</text>
+    <rect x="884" y="418" width="114" height="30" rx="15" fill="#D1F3E2"/>
+    <text x="912" y="438" fill="#16614A" font-size="14" font-family="IBM Plex Mono, Menlo, monospace">pass</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="1072" y="208" width="240" height="264" rx="28" fill="white"/>
+    <rect x="1096" y="232" width="192" height="56" rx="18" fill="#FFF1CD"/>
+    <text x="1138" y="267" fill="#B45309" font-size="25" font-family="Avenir Next, Segoe UI, sans-serif" font-weight="800">Outputs</text>
+    <text x="1104" y="340" fill="#27445D" font-size="20" font-family="Avenir Next, Segoe UI, sans-serif" font-weight="700">Findings and audit event</text>
+    <text x="1104" y="374" fill="#4B6478" font-size="18" font-family="Avenir Next, Segoe UI, sans-serif">The UI gets operator-readable rationale and the system writes a durable audit trail.</text>
+  </g>
+
+  <line x1="346" y1="340" x2="396" y2="340" stroke="#0C2D48" stroke-width="5" stroke-linecap="round" marker-end="url(#arrow)"/>
+  <line x1="656" y1="340" x2="706" y2="340" stroke="#0C2D48" stroke-width="5" stroke-linecap="round" marker-end="url(#arrow)"/>
+  <line x1="1022" y1="340" x2="1072" y2="340" stroke="#0C2D48" stroke-width="5" stroke-linecap="round" marker-end="url(#arrow)"/>
+
+  <g filter="url(#shadow)">
+    <rect x="408" y="544" width="588" height="106" rx="28" fill="#0C2D48"/>
+    <text x="442" y="586" fill="#EFF7FF" font-size="26" font-family="Avenir Next, Segoe UI, sans-serif" font-weight="800">Governance outcome</text>
+    <text x="442" y="620" fill="#B7DDF7" font-size="18" font-family="Avenir Next, Segoe UI, sans-serif">Policy moves from hidden tribal knowledge to explicit machine-checked evidence with rationale.</text>
+  </g>
+</svg>

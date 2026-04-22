@@ -54,104 +54,39 @@ VANGUARD makes delivery intelligence inspectable and operational.
 
 ## Architecture
 
-```mermaid
-flowchart LR
-  UI[Next.js Web App] --> API[FastAPI API Layer]
-  API --> DS[Seeded Dataset Loader]
-  API --> RISK[Risk Engine]
-  API --> POLICY[Policy Engine]
-  API --> GRAPH[Impact Graph Service]
-  API --> EVAL[Evaluation Service]
-  API --> AUDIT[Audit Service]
-  API --> PG[(PostgreSQL)]
-  API --> REDIS[(Redis)]
-  API --> NEO4J[(Neo4j)]
-  API --> OS[(OpenSearch)]
-  GRAPH --> NEO4J
-  EVAL --> AUDIT
-```
+VANGUARD is organized as a control tower:
+- Operator surfaces live in the Next.js app.
+- FastAPI orchestrates risk, policy, graph, release, and audit workflows.
+- Intelligence engines turn repository and runtime evidence into decisions.
+- Seeded datasets and infrastructure services keep local scenarios reproducible.
 
-## PR Analysis Lifecycle
+![VANGUARD Architecture](docs/assets/architecture-overview.svg)
 
-```mermaid
-sequenceDiagram
-  participant User
-  participant UI
-  participant API
-  participant Risk
-  participant Policy
-  participant Graph
-  participant Audit
+## Core Flows
 
-  User->>UI: Open PR workspace
-  UI->>API: POST /api/v1/pull-requests/{id}/analyze
-  API->>Graph: Expand impacted services/modules
-  API->>Risk: Score weighted risk factors
-  API->>Policy: Evaluate governance rules
-  API->>Audit: Persist analysis event
-  API-->>UI: Grounded analysis payload
-```
+### PR Analysis Lifecycle
 
-## Dependency Impact Traversal
+![PR Analysis Lifecycle](docs/assets/pr-analysis-flow.svg)
 
-```mermaid
-flowchart TD
-  CHANGED[Changed services from PR] --> BFS[Bounded traversal max depth=2]
-  BFS --> EDGES[depends_on/calls/consumes/publishes_to]
-  EDGES --> IMPACT[Impacted service set]
-  IMPACT --> DEPTH[Blast radius depth]
-  IMPACT --> OWNERS[Owner/team enrichment]
-```
+### Dependency Impact Traversal
 
-## Test and CI Intelligence Flow
+![Dependency Impact Traversal](docs/assets/dependency-impact-flow.svg)
 
-```mermaid
-flowchart LR
-  TEST[Test runs] --> JOIN[Signal aggregation]
-  CI[CI jobs + retries] --> JOIN
-  JOIN --> GAP[Test gap detector]
-  GAP --> RISK[Risk confidence adjustments]
-  JOIN --> PANEL[PR and release diagnostics]
-```
+### Test and CI Intelligence Flow
 
-## Release Readiness and Approval Flow
+![Test and CI Intelligence Flow](docs/assets/operations-signals-flow.svg)
 
-```mermaid
-flowchart TD
-  PRS[Merged PR candidates] --> READINESS[Compute readiness score]
-  READINESS --> CHECK1{High risk unresolved?}
-  CHECK1 -->|Yes| BLOCK[Block release]
-  CHECK1 -->|No| CHECK2{Required approvals complete?}
-  CHECK2 -->|No| BLOCK
-  CHECK2 -->|Yes| READY[Release ready]
-  BLOCK --> OVERRIDE{Override with rationale?}
-  OVERRIDE -->|Yes| READY
-  OVERRIDE -->|No| HOLD[Hold candidate]
-```
+### Release Readiness and Approval Flow
 
-## Policy Evaluation Flow
+![Release Readiness and Approval Flow](docs/assets/release-readiness-flow.svg)
 
-```mermaid
-flowchart LR
-  INPUT[PR paths + risk + release context] --> RULES[Policy ruleset]
-  RULES --> MATCH[Path/risk condition matcher]
-  MATCH --> FINDINGS[Policy findings]
-  FINDINGS --> STATE[pass/blocked]
-  STATE --> AUDIT[Audit log event]
-```
+### Policy Evaluation Flow
 
-## Eval Pipeline and CI Gate Flow
+![Policy Evaluation Flow](docs/assets/policy-evaluation-flow.svg)
 
-```mermaid
-flowchart TD
-  BENCH[Seeded benchmark cases] --> RUN[POST /api/v1/evals/run]
-  RUN --> CHECKS[Impact/reviewer/policy/risk checks]
-  CHECKS --> SCORE[Pass rate + quality metrics]
-  SCORE --> STORE[Persist eval run history]
-  STORE --> GATE{Pass threshold met?}
-  GATE -->|Yes| MERGE[Allow CI gate]
-  GATE -->|No| FAIL[Fail CI gate]
-```
+### Eval Pipeline and CI Gate Flow
+
+![Eval Pipeline and CI Gate Flow](docs/assets/eval-pipeline-flow.svg)
 
 ## Risk Scoring Model
 

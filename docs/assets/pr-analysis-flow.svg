@@ -1,0 +1,86 @@
+<svg width="1400" height="760" viewBox="0 0 1400 760" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="140" y1="24" x2="1260" y2="736" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#F7FBFF"/>
+      <stop offset="1" stop-color="#FFF7EA"/>
+    </linearGradient>
+    <linearGradient id="lane" x1="112" y1="164" x2="1286" y2="164" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#145DA0"/>
+      <stop offset="1" stop-color="#2A9D8F"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="18" stdDeviation="16" flood-color="#0F172A" flood-opacity="0.10"/>
+    </filter>
+    <marker id="arrow" markerWidth="14" markerHeight="14" refX="10" refY="7" orient="auto">
+      <path d="M0 0L14 7L0 14V0Z" fill="#0C2D48"/>
+    </marker>
+  </defs>
+
+  <rect width="1400" height="760" rx="30" fill="url(#bg)"/>
+  <text x="88" y="84" fill="#0C2D48" font-size="40" font-family="Avenir Next, Segoe UI, sans-serif" font-weight="800">PR Analysis Lifecycle</text>
+  <text x="88" y="120" fill="#4B6478" font-size="20" font-family="Avenir Next, Segoe UI, sans-serif">From operator request to evidence-backed decision payload.</text>
+
+  <rect x="88" y="154" width="1224" height="36" rx="18" fill="url(#lane)"/>
+  <text x="116" y="178" fill="#EAF6FF" font-size="15" font-family="IBM Plex Mono, Menlo, monospace">operator request</text>
+  <text x="394" y="178" fill="#EAF6FF" font-size="15" font-family="IBM Plex Mono, Menlo, monospace">context expansion</text>
+  <text x="678" y="178" fill="#EAF6FF" font-size="15" font-family="IBM Plex Mono, Menlo, monospace">signal evaluation</text>
+  <text x="962" y="178" fill="#EAF6FF" font-size="15" font-family="IBM Plex Mono, Menlo, monospace">decision packaging</text>
+
+  <g filter="url(#shadow)">
+    <rect x="88" y="236" width="250" height="300" rx="28" fill="white"/>
+    <rect x="112" y="260" width="202" height="58" rx="18" fill="#D7ECFF"/>
+    <text x="171" y="296" fill="#0B4F7A" font-size="26" font-family="Avenir Next, Segoe UI, sans-serif" font-weight="800">1. Trigger</text>
+    <text x="120" y="358" fill="#27445D" font-size="20" font-family="Avenir Next, Segoe UI, sans-serif" font-weight="700">PR Workspace request</text>
+    <text x="120" y="392" fill="#4B6478" font-size="18" font-family="Avenir Next, Segoe UI, sans-serif">`POST /pull-requests/{id}/analyze` starts the orchestration run.</text>
+    <rect x="120" y="438" width="152" height="28" rx="14" fill="#FFF1CD"/>
+    <text x="141" y="456" fill="#9A6700" font-size="13.5" font-family="IBM Plex Mono, Menlo, monospace">request id</text>
+    <rect x="120" y="478" width="176" height="28" rx="14" fill="#D1F3E2"/>
+    <text x="141" y="496" fill="#16614A" font-size="13.5" font-family="IBM Plex Mono, Menlo, monospace">actor + pr context</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="390" y="236" width="288" height="300" rx="28" fill="white"/>
+    <rect x="414" y="260" width="240" height="58" rx="18" fill="#D1F3E2"/>
+    <text x="459" y="296" fill="#16614A" font-size="26" font-family="Avenir Next, Segoe UI, sans-serif" font-weight="800">2. Expand Context</text>
+    <text x="422" y="358" fill="#27445D" font-size="20" font-family="Avenir Next, Segoe UI, sans-serif" font-weight="700">Graph and ownership lookup</text>
+    <text x="422" y="392" fill="#4B6478" font-size="18" font-family="Avenir Next, Segoe UI, sans-serif">Changed paths are mapped to impacted services, owners, and reviewer candidates.</text>
+    <rect x="422" y="438" width="176" height="28" rx="14" fill="#D8ECFF"/>
+    <text x="446" y="456" fill="#0B4F7A" font-size="13.5" font-family="IBM Plex Mono, Menlo, monospace">blast radius</text>
+    <rect x="422" y="478" width="182" height="28" rx="14" fill="#FFF1CD"/>
+    <text x="446" y="496" fill="#9A6700" font-size="13.5" font-family="IBM Plex Mono, Menlo, monospace">owners + services</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="730" y="236" width="288" height="300" rx="28" fill="white"/>
+    <rect x="754" y="260" width="240" height="58" rx="18" fill="#FFE1D8"/>
+    <text x="793" y="296" fill="#C2410C" font-size="26" font-family="Avenir Next, Segoe UI, sans-serif" font-weight="800">3. Score and Gate</text>
+    <text x="762" y="358" fill="#27445D" font-size="20" font-family="Avenir Next, Segoe UI, sans-serif" font-weight="700">Risk, CI, tests, and policy</text>
+    <text x="762" y="392" fill="#4B6478" font-size="18" font-family="Avenir Next, Segoe UI, sans-serif">The API combines weighted risk factors with policy findings and unstable pipeline signals.</text>
+    <rect x="762" y="438" width="146" height="28" rx="14" fill="#FFE9C2"/>
+    <text x="788" y="456" fill="#9A6700" font-size="13.5" font-family="IBM Plex Mono, Menlo, monospace">risk score</text>
+    <rect x="762" y="478" width="162" height="28" rx="14" fill="#FFD7D0"/>
+    <text x="786" y="496" fill="#C2410C" font-size="13.5" font-family="IBM Plex Mono, Menlo, monospace">policy findings</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="1070" y="236" width="242" height="300" rx="28" fill="white"/>
+    <rect x="1094" y="260" width="194" height="58" rx="18" fill="#FFF1CD"/>
+    <text x="1140" y="296" fill="#B45309" font-size="26" font-family="Avenir Next, Segoe UI, sans-serif" font-weight="800">4. Return</text>
+    <text x="1102" y="358" fill="#27445D" font-size="20" font-family="Avenir Next, Segoe UI, sans-serif" font-weight="700">Grounded payload</text>
+    <text x="1102" y="392" fill="#4B6478" font-size="18" font-family="Avenir Next, Segoe UI, sans-serif">UI receives factor rationale, impacted surfaces, approvals, and operator-ready diagnostics.</text>
+    <rect x="1102" y="438" width="140" height="28" rx="14" fill="#D7ECFF"/>
+    <text x="1125" y="456" fill="#0B4F7A" font-size="13.5" font-family="IBM Plex Mono, Menlo, monospace">evidence</text>
+    <rect x="1102" y="478" width="164" height="28" rx="14" fill="#D1F3E2"/>
+    <text x="1125" y="496" fill="#16614A" font-size="13.5" font-family="IBM Plex Mono, Menlo, monospace">audit event</text>
+  </g>
+
+  <line x1="338" y1="386" x2="390" y2="386" stroke="#0C2D48" stroke-width="5" stroke-linecap="round" marker-end="url(#arrow)"/>
+  <line x1="678" y1="386" x2="730" y2="386" stroke="#0C2D48" stroke-width="5" stroke-linecap="round" marker-end="url(#arrow)"/>
+  <line x1="1018" y1="386" x2="1070" y2="386" stroke="#0C2D48" stroke-width="5" stroke-linecap="round" marker-end="url(#arrow)"/>
+
+  <g filter="url(#shadow)">
+    <rect x="240" y="590" width="920" height="110" rx="28" fill="#0C2D48"/>
+    <text x="280" y="636" fill="#EAF6FF" font-size="24" font-family="Avenir Next, Segoe UI, sans-serif" font-weight="800">Output shape</text>
+    <text x="280" y="668" fill="#B7DDF7" font-size="18" font-family="Avenir Next, Segoe UI, sans-serif">Risk factors, blast radius, CI and test diagnostics, reviewer suggestions, policy blockers, confidence, and audit linkage.</text>
+  </g>
+</svg>
