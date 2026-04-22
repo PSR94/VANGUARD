@@ -1,0 +1,22 @@
+# Node
+node_modules/
+.next/
+out/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+.mypy_cache/
+
+# Env and logs
+.env
+*.log
+
+# OS
+.DS_Store
+
+# Build
+coverage/
+dist/
