@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(circle at 10% 10%, rgba(11, 79, 122, 0.12), transparent 45%),
+    radial-gradient(circle at 90% 0%, rgba(230, 111, 0, 0.12), transparent 40%),
+    linear-gradient(180deg, #f8fbff 0%, #eef4f9 100%);
+  color: #0f172a;
+  font-family: Manrope, ui-sans-serif, system-ui;
+}
