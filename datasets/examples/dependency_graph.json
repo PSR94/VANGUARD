@@ -1,0 +1,28 @@
+{
+  "nodes": [
+    {"id": "repo-payments-api", "kind": "repository", "name": "payments-api"},
+    {"id": "repo-auth-gateway", "kind": "repository", "name": "auth-gateway"},
+    {"id": "repo-platform-core", "kind": "repository", "name": "platform-core"},
+    {"id": "svc-payments", "kind": "service", "name": "payments"},
+    {"id": "svc-auth", "kind": "service", "name": "auth"},
+    {"id": "svc-release-control", "kind": "service", "name": "release-control"},
+    {"id": "svc-observability", "kind": "service", "name": "observability"},
+    {"id": "team-platform", "kind": "team", "name": "platform"},
+    {"id": "team-security", "kind": "team", "name": "security"},
+    {"id": "team-payments", "kind": "team", "name": "payments"},
+    {"id": "job-release-train", "kind": "job", "name": "release-train"}
+  ],
+  "edges": [
+    {"from": "repo-payments-api", "to": "svc-payments", "type": "deploys_to"},
+    {"from": "repo-auth-gateway", "to": "svc-auth", "type": "deploys_to"},
+    {"from": "repo-platform-core", "to": "svc-observability", "type": "deploys_to"},
+    {"from": "svc-payments", "to": "svc-auth", "type": "depends_on"},
+    {"from": "svc-payments", "to": "svc-release-control", "type": "publishes_to"},
+    {"from": "svc-auth", "to": "svc-release-control", "type": "publishes_to"},
+    {"from": "svc-observability", "to": "svc-release-control", "type": "consumes"},
+    {"from": "svc-payments", "to": "team-payments", "type": "owned_by"},
+    {"from": "svc-auth", "to": "team-security", "type": "owned_by"},
+    {"from": "svc-release-control", "to": "team-platform", "type": "owned_by"},
+    {"from": "svc-release-control", "to": "job-release-train", "type": "protected_by"}
+  ]
+}

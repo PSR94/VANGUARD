@@ -1,0 +1,26 @@
+[
+  {
+    "id": "EVAL-PR-3412",
+    "pr_id": "PR-3412",
+    "expected_impacted_services": ["svc-payments", "svc-release-control"],
+    "expected_reviewers": ["maya", "liam"],
+    "expected_policy_ids": ["POL-CRIT-PAYMENTS-APPROVAL"],
+    "expected_min_risk": 60
+  },
+  {
+    "id": "EVAL-PR-3413",
+    "pr_id": "PR-3413",
+    "expected_impacted_services": ["svc-auth", "svc-release-control"],
+    "expected_reviewers": ["nora", "ahmed"],
+    "expected_policy_ids": ["POL-AUTH-CONFIG-SECURITY"],
+    "expected_min_risk": 80
+  },
+  {
+    "id": "EVAL-PR-3414",
+    "pr_id": "PR-3414",
+    "expected_impacted_services": ["svc-observability"],
+    "expected_reviewers": ["marta"],
+    "expected_policy_ids": [],
+    "expected_min_risk": 20
+  }
+]
