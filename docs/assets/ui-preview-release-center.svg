@@ -1,7 +1,46 @@
 <svg width="1000" height="620" viewBox="0 0 1000 620" xmlns="http://www.w3.org/2000/svg">
-  <rect width="1000" height="620" fill="#eef4f9"/>
-  <rect x="20" y="20" width="650" height="180" rx="12" fill="#ffffff"/>
-  <rect x="690" y="20" width="290" height="180" rx="12" fill="#ffffff"/>
-  <rect x="20" y="220" width="960" height="170" rx="12" fill="#ffffff"/>
-  <rect x="20" y="410" width="960" height="190" rx="12" fill="#ffffff"/>
+  <rect width="1000" height="620" rx="24" fill="#eef4f9"/>
+  <rect x="20" y="20" width="650" height="180" rx="18" fill="#ffffff"/>
+  <text x="48" y="60" font-size="28" fill="#0c2d48" font-family="Avenir Next, Segoe UI, sans-serif" font-weight="700">Release Center</text>
+  <text x="48" y="88" font-size="16" fill="#5a7287" font-family="Avenir Next, Segoe UI, sans-serif">RC-2026.04.21 • candidate readiness, blockers, and approval state</text>
+
+  <rect x="48" y="112" width="200" height="58" rx="18" fill="#d7f1e2"/>
+  <text x="70" y="135" font-size="14" fill="#16614a" font-family="Avenir Next, Segoe UI, sans-serif">Readiness score</text>
+  <text x="70" y="160" font-size="28" fill="#16614a" font-family="Avenir Next, Segoe UI, sans-serif" font-weight="800">81 / 100</text>
+  <rect x="276" y="112" width="166" height="58" rx="18" fill="#fff1cd"/>
+  <text x="298" y="135" font-size="14" fill="#9a6700" font-family="Avenir Next, Segoe UI, sans-serif">Pending approvals</text>
+  <text x="298" y="160" font-size="28" fill="#9a6700" font-family="Avenir Next, Segoe UI, sans-serif" font-weight="800">2</text>
+  <rect x="470" y="112" width="152" height="58" rx="18" fill="#ffe3da"/>
+  <text x="492" y="135" font-size="14" fill="#c2410c" font-family="Avenir Next, Segoe UI, sans-serif">Blockers</text>
+  <text x="492" y="160" font-size="28" fill="#c2410c" font-family="Avenir Next, Segoe UI, sans-serif" font-weight="800">3</text>
+
+  <rect x="690" y="20" width="290" height="180" rx="18" fill="#ffffff"/>
+  <text x="718" y="60" font-size="22" fill="#0c2d48" font-family="Avenir Next, Segoe UI, sans-serif" font-weight="700">Approval Ladder</text>
+  <rect x="718" y="90" width="84" height="34" rx="14" fill="#d7f1e2"/>
+  <text x="740" y="112" font-size="14" fill="#16614a" font-family="Avenir Next, Segoe UI, sans-serif">Platform</text>
+  <rect x="816" y="90" width="84" height="34" rx="14" fill="#ffe3da"/>
+  <text x="839" y="112" font-size="14" fill="#c2410c" font-family="Avenir Next, Segoe UI, sans-serif">Security</text>
+  <rect x="914" y="90" width="38" height="34" rx="14" fill="#fff1cd"/>
+  <text x="923" y="112" font-size="14" fill="#9a6700" font-family="Avenir Next, Segoe UI, sans-serif">QA</text>
+  <line x1="732" y1="144" x2="936" y2="144" stroke="#c8d8e4" stroke-width="4"/>
+  <circle cx="760" cy="144" r="10" fill="#1f8a70"/>
+  <circle cx="858" cy="144" r="10" fill="#ff8f66"/>
+  <circle cx="932" cy="144" r="10" fill="#ffcf5a"/>
+
+  <rect x="20" y="220" width="960" height="170" rx="18" fill="#ffffff"/>
+  <text x="48" y="256" font-size="22" fill="#0c2d48" font-family="Avenir Next, Segoe UI, sans-serif" font-weight="700">Blocking Signals</text>
+  <rect x="48" y="280" width="884" height="28" rx="10" fill="#fff7ed"/>
+  <text x="64" y="299" font-size="14" fill="#9a3412" font-family="Avenir Next, Segoe UI, sans-serif">Security approval missing for auth-configuration change</text>
+  <rect x="48" y="320" width="860" height="28" rx="10" fill="#eef7ff"/>
+  <text x="64" y="339" font-size="14" fill="#145da0" font-family="Avenir Next, Segoe UI, sans-serif">CI retries exceeded threshold on payments-service integration job</text>
+  <rect x="48" y="360" width="824" height="28" rx="10" fill="#fff7ed"/>
+  <text x="64" y="379" font-size="14" fill="#9a3412" font-family="Avenir Next, Segoe UI, sans-serif">Override rationale absent for high-risk rollout path</text>
+
+  <rect x="20" y="410" width="960" height="190" rx="18" fill="#ffffff"/>
+  <text x="48" y="446" font-size="22" fill="#0c2d48" font-family="Avenir Next, Segoe UI, sans-serif" font-weight="700">Release Notes Preview</text>
+  <text x="48" y="486" font-size="15" fill="#29465f" font-family="Avenir Next, Segoe UI, sans-serif">• payments-service retry handling updated</text>
+  <text x="48" y="516" font-size="15" fill="#29465f" font-family="Avenir Next, Segoe UI, sans-serif">• auth policy enforcement tightened for protected configuration paths</text>
+  <text x="48" y="546" font-size="15" fill="#29465f" font-family="Avenir Next, Segoe UI, sans-serif">• release workflow UI surfaced blocker and override metadata</text>
+  <rect x="704" y="520" width="230" height="40" rx="16" fill="#0b4f7a"/>
+  <text x="758" y="545" font-size="15" fill="#ffffff" font-family="Avenir Next, Segoe UI, sans-serif" font-weight="700">Generate Summary</text>
 </svg>

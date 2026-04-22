@@ -1,5 +1,53 @@
 <svg width="1000" height="620" viewBox="0 0 1000 620" xmlns="http://www.w3.org/2000/svg">
-  <rect width="1000" height="620" fill="#f6fbf9"/>
-  <rect x="20" y="20" width="960" height="260" rx="12" fill="#ffffff"/>
-  <rect x="20" y="300" width="960" height="300" rx="12" fill="#ffffff"/>
+  <rect width="1000" height="620" rx="24" fill="#f6fbf9"/>
+  <rect x="20" y="20" width="960" height="260" rx="18" fill="#ffffff"/>
+  <text x="48" y="60" font-size="28" fill="#0c2d48" font-family="Avenir Next, Segoe UI, sans-serif" font-weight="700">Policy Center</text>
+  <text x="48" y="88" font-size="16" fill="#5a7287" font-family="Avenir Next, Segoe UI, sans-serif">Rule evaluation, approval baselines, and audit-linked findings</text>
+
+  <rect x="48" y="118" width="280" height="126" rx="18" fill="#eef7ff"/>
+  <text x="72" y="152" font-size="16" fill="#0b4f7a" font-family="Avenir Next, Segoe UI, sans-serif" font-weight="700">payments-critical-path</text>
+  <text x="72" y="178" font-size="12.5" fill="#29465f" font-family="Avenir Next, Segoe UI, sans-serif">Protected service change</text>
+  <text x="72" y="196" font-size="12.5" fill="#29465f" font-family="Avenir Next, Segoe UI, sans-serif">needs platform approval.</text>
+  <rect x="72" y="202" width="96" height="28" rx="12" fill="#d7f1e2"/>
+  <text x="97" y="221" font-size="13" fill="#16614a" font-family="Avenir Next, Segoe UI, sans-serif">active</text>
+
+  <rect x="356" y="118" width="280" height="126" rx="18" fill="#fff7ed"/>
+  <text x="380" y="152" font-size="16" fill="#9a3412" font-family="Avenir Next, Segoe UI, sans-serif" font-weight="700">auth-config-review</text>
+  <text x="380" y="178" font-size="12.5" fill="#29465f" font-family="Avenir Next, Segoe UI, sans-serif">Security sign-off for</text>
+  <text x="380" y="196" font-size="12.5" fill="#29465f" font-family="Avenir Next, Segoe UI, sans-serif">auth updates.</text>
+  <rect x="380" y="202" width="96" height="28" rx="12" fill="#fff1cd"/>
+  <text x="405" y="221" font-size="13" fill="#9a6700" font-family="Avenir Next, Segoe UI, sans-serif">required</text>
+
+  <rect x="664" y="118" width="268" height="126" rx="18" fill="#f2ecff"/>
+  <text x="688" y="152" font-size="16" fill="#5b21b6" font-family="Avenir Next, Segoe UI, sans-serif" font-weight="700">release-override-rationale</text>
+  <text x="688" y="178" font-size="12.5" fill="#29465f" font-family="Avenir Next, Segoe UI, sans-serif">Actor + rationale</text>
+  <text x="688" y="196" font-size="12.5" fill="#29465f" font-family="Avenir Next, Segoe UI, sans-serif">required for override.</text>
+  <rect x="688" y="202" width="96" height="28" rx="12" fill="#ede9fe"/>
+  <text x="713" y="221" font-size="13" fill="#5b21b6" font-family="Avenir Next, Segoe UI, sans-serif">audited</text>
+
+  <rect x="20" y="300" width="960" height="300" rx="18" fill="#ffffff"/>
+  <text x="48" y="336" font-size="22" fill="#0c2d48" font-family="Avenir Next, Segoe UI, sans-serif" font-weight="700">Latest Evaluation Results</text>
+  <line x1="48" y1="356" x2="952" y2="356" stroke="#d9e6f0"/>
+  <text x="48" y="392" font-size="15" fill="#5a7287" font-family="Avenir Next, Segoe UI, sans-serif">Rule</text>
+  <text x="376" y="392" font-size="15" fill="#5a7287" font-family="Avenir Next, Segoe UI, sans-serif">Scope</text>
+  <text x="616" y="392" font-size="15" fill="#5a7287" font-family="Avenir Next, Segoe UI, sans-serif">Result</text>
+  <text x="782" y="392" font-size="15" fill="#5a7287" font-family="Avenir Next, Segoe UI, sans-serif">Audit Ref</text>
+
+  <text x="48" y="430" font-size="15" fill="#29465f" font-family="Avenir Next, Segoe UI, sans-serif">auth-config-review</text>
+  <text x="376" y="430" font-size="15" fill="#29465f" font-family="Avenir Next, Segoe UI, sans-serif">apps/api/app/config</text>
+  <rect x="616" y="410" width="110" height="28" rx="12" fill="#ffe3da"/>
+  <text x="646" y="429" font-size="13" fill="#c2410c" font-family="Avenir Next, Segoe UI, sans-serif">blocked</text>
+  <text x="782" y="430" font-size="15" fill="#145da0" font-family="IBM Plex Mono, Menlo, monospace">AUD-2197</text>
+
+  <text x="48" y="474" font-size="15" fill="#29465f" font-family="Avenir Next, Segoe UI, sans-serif">payments-critical-path</text>
+  <text x="376" y="474" font-size="15" fill="#29465f" font-family="Avenir Next, Segoe UI, sans-serif">services/payments</text>
+  <rect x="616" y="454" width="110" height="28" rx="12" fill="#fff1cd"/>
+  <text x="642" y="473" font-size="13" fill="#9a6700" font-family="Avenir Next, Segoe UI, sans-serif">approval</text>
+  <text x="782" y="474" font-size="15" fill="#145da0" font-family="IBM Plex Mono, Menlo, monospace">AUD-2194</text>
+
+  <text x="48" y="518" font-size="15" fill="#29465f" font-family="Avenir Next, Segoe UI, sans-serif">release-override-rationale</text>
+  <text x="376" y="518" font-size="15" fill="#29465f" font-family="Avenir Next, Segoe UI, sans-serif">release-center</text>
+  <rect x="616" y="498" width="110" height="28" rx="12" fill="#d7f1e2"/>
+  <text x="654" y="517" font-size="13" fill="#16614a" font-family="Avenir Next, Segoe UI, sans-serif">pass</text>
+  <text x="782" y="518" font-size="15" fill="#145da0" font-family="IBM Plex Mono, Menlo, monospace">AUD-2189</text>
 </svg>

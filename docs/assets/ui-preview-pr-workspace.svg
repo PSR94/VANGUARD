@@ -1,9 +1,51 @@
 <svg width="1000" height="620" viewBox="0 0 1000 620" xmlns="http://www.w3.org/2000/svg">
-  <rect width="1000" height="620" fill="#f7fbff"/>
-  <rect x="20" y="20" width="960" height="90" rx="10" fill="#ffffff"/>
-  <rect x="20" y="130" width="470" height="220" rx="10" fill="#ffffff"/>
-  <rect x="510" y="130" width="470" height="220" rx="10" fill="#ffffff"/>
-  <rect x="20" y="370" width="310" height="230" rx="10" fill="#ffffff"/>
-  <rect x="345" y="370" width="310" height="230" rx="10" fill="#ffffff"/>
-  <rect x="670" y="370" width="310" height="230" rx="10" fill="#ffffff"/>
+  <rect width="1000" height="620" rx="24" fill="#f7fbff"/>
+  <rect x="20" y="20" width="960" height="92" rx="18" fill="#ffffff"/>
+  <text x="46" y="60" font-size="28" fill="#0c2d48" font-family="Avenir Next, Segoe UI, sans-serif" font-weight="700">PR Workspace</text>
+  <text x="46" y="88" font-size="16" fill="#5a7287" font-family="Avenir Next, Segoe UI, sans-serif">PR-3413 • auth-config and payments routing update</text>
+  <rect x="806" y="42" width="136" height="34" rx="14" fill="#ffe3da"/>
+  <text x="844" y="64" font-size="15" fill="#c2410c" font-family="Avenir Next, Segoe UI, sans-serif" font-weight="700">High Risk</text>
+
+  <rect x="20" y="130" width="470" height="220" rx="18" fill="#ffffff"/>
+  <text x="46" y="166" font-size="22" fill="#0c2d48" font-family="Avenir Next, Segoe UI, sans-serif" font-weight="700">Risk Summary</text>
+  <text x="46" y="204" font-size="46" fill="#c2410c" font-family="Avenir Next, Segoe UI, sans-serif" font-weight="800">78</text>
+  <text x="120" y="204" font-size="18" fill="#5a7287" font-family="Avenir Next, Segoe UI, sans-serif">weighted score</text>
+  <rect x="46" y="226" width="188" height="18" rx="9" fill="#ffe3da"/>
+  <rect x="46" y="226" width="138" height="18" rx="9" fill="#ff8f66"/>
+  <text x="46" y="278" font-size="16" fill="#29465f" font-family="Avenir Next, Segoe UI, sans-serif">• Critical auth path touched</text>
+  <text x="46" y="306" font-size="16" fill="#29465f" font-family="Avenir Next, Segoe UI, sans-serif">• CI retries detected in payments-service</text>
+  <text x="46" y="334" font-size="16" fill="#29465f" font-family="Avenir Next, Segoe UI, sans-serif">• Coverage regressed in release workflow tests</text>
+
+  <rect x="510" y="130" width="470" height="220" rx="18" fill="#ffffff"/>
+  <text x="536" y="166" font-size="22" fill="#0c2d48" font-family="Avenir Next, Segoe UI, sans-serif" font-weight="700">Changed Files and Impact</text>
+  <rect x="536" y="192" width="198" height="30" rx="12" fill="#eef7ff"/>
+  <text x="552" y="212" font-size="14" fill="#145da0" font-family="IBM Plex Mono, Menlo, monospace">apps/api/app/main.py</text>
+  <rect x="536" y="232" width="216" height="30" rx="12" fill="#eef7ff"/>
+  <text x="552" y="252" font-size="14" fill="#145da0" font-family="IBM Plex Mono, Menlo, monospace">services/policy_service.py</text>
+  <rect x="536" y="272" width="236" height="30" rx="12" fill="#eef7ff"/>
+  <text x="552" y="292" font-size="14" fill="#145da0" font-family="IBM Plex Mono, Menlo, monospace">app/release-center/page.tsx</text>
+  <text x="536" y="328" font-size="16" fill="#29465f" font-family="Avenir Next, Segoe UI, sans-serif">Impacted services: api-core, policy-engine, release-ui</text>
+
+  <rect x="20" y="370" width="310" height="230" rx="18" fill="#ffffff"/>
+  <text x="46" y="406" font-size="22" fill="#0c2d48" font-family="Avenir Next, Segoe UI, sans-serif" font-weight="700">Policy Findings</text>
+  <rect x="46" y="430" width="236" height="32" rx="12" fill="#fff7ed"/>
+  <text x="62" y="451" font-size="14" fill="#9a3412" font-family="Avenir Next, Segoe UI, sans-serif">Security approval required</text>
+  <rect x="46" y="472" width="212" height="32" rx="12" fill="#fff7ed"/>
+  <text x="62" y="493" font-size="14" fill="#9a3412" font-family="Avenir Next, Segoe UI, sans-serif">Override rationale missing</text>
+
+  <rect x="345" y="370" width="310" height="230" rx="18" fill="#ffffff"/>
+  <text x="371" y="406" font-size="18" fill="#0c2d48" font-family="Avenir Next, Segoe UI, sans-serif" font-weight="700">Reviewer Recommendations</text>
+  <rect x="371" y="430" width="112" height="36" rx="14" fill="#d7f1e2"/>
+  <text x="399" y="453" font-size="15" fill="#16614a" font-family="Avenir Next, Segoe UI, sans-serif" font-weight="700">Platform</text>
+  <rect x="371" y="476" width="118" height="36" rx="14" fill="#d8ecff"/>
+  <text x="402" y="499" font-size="15" fill="#145da0" font-family="Avenir Next, Segoe UI, sans-serif" font-weight="700">Security</text>
+  <text x="371" y="546" font-size="15" fill="#29465f" font-family="Avenir Next, Segoe UI, sans-serif">Matched by ownership, protected path, and service impact.</text>
+
+  <rect x="670" y="370" width="310" height="230" rx="18" fill="#ffffff"/>
+  <text x="696" y="406" font-size="20" fill="#0c2d48" font-family="Avenir Next, Segoe UI, sans-serif" font-weight="700">CI and Tests</text>
+  <rect x="696" y="430" width="244" height="30" rx="12" fill="#eef7ff"/>
+  <text x="714" y="450" font-size="14" fill="#145da0" font-family="Avenir Next, Segoe UI, sans-serif">payments-service / retry instability</text>
+  <rect x="696" y="470" width="228" height="30" rx="12" fill="#eef7ff"/>
+  <text x="714" y="490" font-size="14" fill="#145da0" font-family="Avenir Next, Segoe UI, sans-serif">release-flow / coverage -6%</text>
+  <text x="696" y="548" font-size="15" fill="#29465f" font-family="Avenir Next, Segoe UI, sans-serif">Confidence lowered until failures stabilize.</text>
 </svg>

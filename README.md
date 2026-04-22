@@ -54,39 +54,231 @@ VANGUARD makes delivery intelligence inspectable and operational.
 
 ## Architecture
 
-VANGUARD is organized as a control tower:
-- Operator surfaces live in the Next.js app.
-- FastAPI orchestrates risk, policy, graph, release, and audit workflows.
-- Intelligence engines turn repository and runtime evidence into decisions.
-- Seeded datasets and infrastructure services keep local scenarios reproducible.
+```mermaid
+%%{init: {'theme': 'base', 'themeVariables': {
+  'fontFamily': 'Trebuchet MS, Verdana, sans-serif',
+  'primaryColor': '#dbeafe',
+  'primaryBorderColor': '#145DA0',
+  'primaryTextColor': '#0C2D48',
+  'lineColor': '#145DA0',
+  'secondaryColor': '#dcfce7',
+  'tertiaryColor': '#fff7ed'
+}}}%%
+flowchart LR
+  UI[Next.js Web App] --> API[FastAPI API Layer]
+  API --> DS[Seeded Dataset Loader]
+  API --> RISK[Risk Engine]
+  API --> POLICY[Policy Engine]
+  API --> GRAPH[Impact Graph Service]
+  API --> EVAL[Evaluation Service]
+  API --> AUDIT[Audit Service]
+  API --> PG[(PostgreSQL)]
+  API --> REDIS[(Redis)]
+  API --> NEO4J[(Neo4j)]
+  API --> OS[(OpenSearch)]
+  GRAPH --> NEO4J
+  EVAL --> AUDIT
 
-![VANGUARD Architecture](docs/assets/architecture-overview.svg)
+  classDef entry fill:#dbeafe,stroke:#145DA0,color:#0C2D48,stroke-width:2px;
+  classDef core fill:#dcfce7,stroke:#1f8a70,color:#14532d,stroke-width:2px;
+  classDef service fill:#fff7ed,stroke:#ea580c,color:#9a3412,stroke-width:2px;
+  classDef storage fill:#ede9fe,stroke:#7c3aed,color:#4c1d95,stroke-width:2px;
 
-## Core Flows
+  class UI entry;
+  class API core;
+  class DS,RISK,POLICY,GRAPH,EVAL,AUDIT service;
+  class PG,REDIS,NEO4J,OS storage;
+```
 
-### PR Analysis Lifecycle
+## PR Analysis Lifecycle
 
-![PR Analysis Lifecycle](docs/assets/pr-analysis-flow.svg)
+```mermaid
+%%{init: {'theme': 'base', 'themeVariables': {
+  'fontFamily': 'Trebuchet MS, Verdana, sans-serif',
+  'actorBkg': '#dbeafe',
+  'actorBorder': '#145DA0',
+  'actorTextColor': '#0C2D48',
+  'activationBkgColor': '#dcfce7',
+  'activationBorderColor': '#1f8a70',
+  'signalColor': '#145DA0',
+  'signalTextColor': '#0C2D48',
+  'labelBoxBkgColor': '#fff7ed',
+  'labelBoxBorderColor': '#ea580c',
+  'labelTextColor': '#9a3412'
+}}}%%
+sequenceDiagram
+  participant User
+  participant UI
+  participant API
+  participant Risk
+  participant Policy
+  participant Graph
+  participant Audit
 
-### Dependency Impact Traversal
+  User->>UI: Open PR workspace
+  UI->>API: POST /api/v1/pull-requests/{id}/analyze
+  API->>Graph: Expand impacted services/modules
+  API->>Risk: Score weighted risk factors
+  API->>Policy: Evaluate governance rules
+  API->>Audit: Persist analysis event
+  API-->>UI: Grounded analysis payload
+```
 
-![Dependency Impact Traversal](docs/assets/dependency-impact-flow.svg)
+## Dependency Impact Traversal
 
-### Test and CI Intelligence Flow
+```mermaid
+%%{init: {'theme': 'base', 'themeVariables': {
+  'fontFamily': 'Trebuchet MS, Verdana, sans-serif',
+  'primaryColor': '#dbeafe',
+  'primaryBorderColor': '#145DA0',
+  'primaryTextColor': '#0C2D48',
+  'lineColor': '#145DA0',
+  'secondaryColor': '#dcfce7',
+  'tertiaryColor': '#fff7ed'
+}}}%%
+flowchart TD
+  CHANGED[Changed services from PR] --> BFS[Bounded traversal max depth=2]
+  BFS --> EDGES[depends_on/calls/consumes/publishes_to]
+  EDGES --> IMPACT[Impacted service set]
+  IMPACT --> DEPTH[Blast radius depth]
+  IMPACT --> OWNERS[Owner/team enrichment]
 
-![Test and CI Intelligence Flow](docs/assets/operations-signals-flow.svg)
+  classDef entry fill:#dbeafe,stroke:#145DA0,color:#0C2D48,stroke-width:2px;
+  classDef process fill:#dcfce7,stroke:#1f8a70,color:#14532d,stroke-width:2px;
+  classDef output fill:#fff7ed,stroke:#ea580c,color:#9a3412,stroke-width:2px;
 
-### Release Readiness and Approval Flow
+  class CHANGED entry;
+  class BFS,EDGES process;
+  class IMPACT,DEPTH,OWNERS output;
+```
 
-![Release Readiness and Approval Flow](docs/assets/release-readiness-flow.svg)
+## Test and CI Intelligence Flow
 
-### Policy Evaluation Flow
+```mermaid
+%%{init: {'theme': 'base', 'themeVariables': {
+  'fontFamily': 'Trebuchet MS, Verdana, sans-serif',
+  'primaryColor': '#dbeafe',
+  'primaryBorderColor': '#145DA0',
+  'primaryTextColor': '#0C2D48',
+  'lineColor': '#145DA0',
+  'secondaryColor': '#dcfce7',
+  'tertiaryColor': '#fff7ed'
+}}}%%
+flowchart LR
+  TEST[Test runs] --> JOIN[Signal aggregation]
+  CI[CI jobs + retries] --> JOIN
+  JOIN --> GAP[Test gap detector]
+  GAP --> RISK[Risk confidence adjustments]
+  JOIN --> PANEL[PR and release diagnostics]
 
-![Policy Evaluation Flow](docs/assets/policy-evaluation-flow.svg)
+  classDef input fill:#dbeafe,stroke:#145DA0,color:#0C2D48,stroke-width:2px;
+  classDef process fill:#dcfce7,stroke:#1f8a70,color:#14532d,stroke-width:2px;
+  classDef output fill:#fff7ed,stroke:#ea580c,color:#9a3412,stroke-width:2px;
 
-### Eval Pipeline and CI Gate Flow
+  class TEST,CI input;
+  class JOIN,GAP process;
+  class RISK,PANEL output;
+```
 
-![Eval Pipeline and CI Gate Flow](docs/assets/eval-pipeline-flow.svg)
+## Release Readiness and Approval Flow
+
+```mermaid
+%%{init: {'theme': 'base', 'themeVariables': {
+  'fontFamily': 'Trebuchet MS, Verdana, sans-serif',
+  'primaryColor': '#dbeafe',
+  'primaryBorderColor': '#145DA0',
+  'primaryTextColor': '#0C2D48',
+  'lineColor': '#145DA0',
+  'secondaryColor': '#dcfce7',
+  'tertiaryColor': '#fff7ed'
+}}}%%
+flowchart TD
+  PRS[Merged PR candidates] --> READINESS[Compute readiness score]
+  READINESS --> CHECK1{High risk unresolved?}
+  CHECK1 -->|Yes| BLOCK[Block release]
+  CHECK1 -->|No| CHECK2{Required approvals complete?}
+  CHECK2 -->|No| BLOCK
+  CHECK2 -->|Yes| READY[Release ready]
+  BLOCK --> OVERRIDE{Override with rationale?}
+  OVERRIDE -->|Yes| READY
+  OVERRIDE -->|No| HOLD[Hold candidate]
+
+  classDef input fill:#dbeafe,stroke:#145DA0,color:#0C2D48,stroke-width:2px;
+  classDef process fill:#dcfce7,stroke:#1f8a70,color:#14532d,stroke-width:2px;
+  classDef decision fill:#fef3c7,stroke:#d97706,color:#92400e,stroke-width:2px;
+  classDef risk fill:#fee2e2,stroke:#dc2626,color:#991b1b,stroke-width:2px;
+  classDef success fill:#dcfce7,stroke:#16a34a,color:#166534,stroke-width:2px;
+  classDef hold fill:#ede9fe,stroke:#7c3aed,color:#5b21b6,stroke-width:2px;
+
+  class PRS input;
+  class READINESS process;
+  class CHECK1,CHECK2,OVERRIDE decision;
+  class BLOCK risk;
+  class READY success;
+  class HOLD hold;
+```
+
+## Policy Evaluation Flow
+
+```mermaid
+%%{init: {'theme': 'base', 'themeVariables': {
+  'fontFamily': 'Trebuchet MS, Verdana, sans-serif',
+  'primaryColor': '#dbeafe',
+  'primaryBorderColor': '#145DA0',
+  'primaryTextColor': '#0C2D48',
+  'lineColor': '#145DA0',
+  'secondaryColor': '#dcfce7',
+  'tertiaryColor': '#fff7ed'
+}}}%%
+flowchart LR
+  INPUT[PR paths + risk + release context] --> RULES[Policy ruleset]
+  RULES --> MATCH[Path/risk condition matcher]
+  MATCH --> FINDINGS[Policy findings]
+  FINDINGS --> STATE[pass/blocked]
+  STATE --> AUDIT[Audit log event]
+
+  classDef input fill:#dbeafe,stroke:#145DA0,color:#0C2D48,stroke-width:2px;
+  classDef process fill:#dcfce7,stroke:#1f8a70,color:#14532d,stroke-width:2px;
+  classDef output fill:#fff7ed,stroke:#ea580c,color:#9a3412,stroke-width:2px;
+
+  class INPUT input;
+  class RULES,MATCH process;
+  class FINDINGS,STATE,AUDIT output;
+```
+
+## Eval Pipeline and CI Gate Flow
+
+```mermaid
+%%{init: {'theme': 'base', 'themeVariables': {
+  'fontFamily': 'Trebuchet MS, Verdana, sans-serif',
+  'primaryColor': '#dbeafe',
+  'primaryBorderColor': '#145DA0',
+  'primaryTextColor': '#0C2D48',
+  'lineColor': '#145DA0',
+  'secondaryColor': '#dcfce7',
+  'tertiaryColor': '#fff7ed'
+}}}%%
+flowchart TD
+  BENCH[Seeded benchmark cases] --> RUN[POST /api/v1/evals/run]
+  RUN --> CHECKS[Impact/reviewer/policy/risk checks]
+  CHECKS --> SCORE[Pass rate + quality metrics]
+  SCORE --> STORE[Persist eval run history]
+  STORE --> GATE{Pass threshold met?}
+  GATE -->|Yes| MERGE[Allow CI gate]
+  GATE -->|No| FAIL[Fail CI gate]
+
+  classDef input fill:#dbeafe,stroke:#145DA0,color:#0C2D48,stroke-width:2px;
+  classDef process fill:#dcfce7,stroke:#1f8a70,color:#14532d,stroke-width:2px;
+  classDef decision fill:#fef3c7,stroke:#d97706,color:#92400e,stroke-width:2px;
+  classDef success fill:#dcfce7,stroke:#16a34a,color:#166534,stroke-width:2px;
+  classDef fail fill:#fee2e2,stroke:#dc2626,color:#991b1b,stroke-width:2px;
+
+  class BENCH input;
+  class RUN,CHECKS,SCORE,STORE process;
+  class GATE decision;
+  class MERGE success;
+  class FAIL fail;
+```
 
 ## Risk Scoring Model
 

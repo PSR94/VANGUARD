@@ -1,67 +1,46 @@
-<svg width="1280" height="420" viewBox="0 0 1280 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg width="1280" height="340" viewBox="0 0 1280 340" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="bg" x1="120" y1="34" x2="1134" y2="386" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#0C2D48"/>
-      <stop offset="0.55" stop-color="#145DA0"/>
-      <stop offset="1" stop-color="#2E8BC0"/>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0b2e4f"/>
+      <stop offset="55%" stop-color="#145da0"/>
+      <stop offset="100%" stop-color="#2e8bc0"/>
     </linearGradient>
-    <linearGradient id="panel" x1="810" y1="92" x2="1104" y2="314" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#FFF8E8"/>
-      <stop offset="1" stop-color="#FFE1A8"/>
+    <linearGradient id="panel" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fff6df"/>
+      <stop offset="100%" stop-color="#ffe3a7"/>
     </linearGradient>
-    <linearGradient id="signal" x1="760" y1="124" x2="1118" y2="270" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#FF6B35"/>
-      <stop offset="1" stop-color="#FFB703"/>
-    </linearGradient>
-    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
-      <feDropShadow dx="0" dy="22" stdDeviation="18" flood-color="#031321" flood-opacity="0.26"/>
-    </filter>
   </defs>
 
-  <rect width="1280" height="420" rx="28" fill="url(#bg)"/>
-  <circle cx="1098" cy="56" r="206" fill="#FFFFFF" fill-opacity="0.08"/>
-  <circle cx="1182" cy="322" r="184" fill="#FEF3C7" fill-opacity="0.12"/>
-  <circle cx="64" cy="374" r="134" fill="#8ECAE6" fill-opacity="0.18"/>
+  <rect width="1280" height="340" rx="28" fill="url(#bg)"/>
+  <circle cx="1160" cy="44" r="168" fill="#ffffff" opacity="0.10"/>
+  <circle cx="1208" cy="300" r="158" fill="#fff5d9" opacity="0.10"/>
+  <circle cx="84" cy="304" r="132" fill="#b9e4ff" opacity="0.10"/>
+  <path d="M0 238C120 196 260 182 402 206C510 224 602 278 734 282C934 288 1076 200 1280 186V340H0V238Z" fill="#0a2238" opacity="0.18"/>
 
-  <path d="M0 290C126 248 214 238 320 254C458 275 514 354 674 349C861 344 938 228 1134 222C1192 221 1240 227 1280 240V420H0V290Z" fill="#071A2A" fill-opacity="0.24"/>
+  <rect x="74" y="66" width="176" height="30" rx="15" fill="#fff3da"/>
+  <text x="98" y="87" font-size="15" fill="#b45309" font-family="Avenir Next, Segoe UI, sans-serif" font-weight="700">LOCAL-FIRST AI OPS</text>
 
-  <g opacity="0.95">
-    <rect x="76" y="82" width="126" height="32" rx="16" fill="#FFF3D4"/>
-    <text x="99" y="103" fill="#B45309" font-size="15" font-family="Avenir Next, Segoe UI, sans-serif" font-weight="700">LOCAL-FIRST AI OPS</text>
-  </g>
+  <text x="72" y="164" font-size="70" fill="#ffffff" font-family="Avenir Next, Segoe UI, sans-serif" font-weight="800">VANGUARD</text>
+  <text x="74" y="214" font-size="28" fill="#dff2ff" font-family="Avenir Next, Segoe UI, sans-serif" font-weight="600">AI Release Intelligence and PR Risk Copilot</text>
+  <text x="74" y="264" font-size="18" fill="#d6ecff" font-family="IBM Plex Mono, Menlo, monospace">Grounded analysis • policy gates • release readiness</text>
 
-  <text x="76" y="178" fill="white" font-size="78" font-family="Avenir Next, Segoe UI, sans-serif" font-weight="800" letter-spacing="1">VANGUARD</text>
-  <text x="78" y="223" fill="#D7F0FF" font-size="27" font-family="Avenir Next, Segoe UI, sans-serif" font-weight="600">AI Release Intelligence and PR Risk Copilot</text>
-  <text x="79" y="282" fill="#B8DDF6" font-size="19" font-family="IBM Plex Mono, Menlo, monospace">Evidence-first risk scoring, policy gates, blast-radius mapping, and release readiness.</text>
+  <rect x="860" y="78" width="330" height="184" rx="24" fill="#0c2d48" opacity="0.18"/>
+  <rect x="838" y="94" width="330" height="184" rx="24" fill="url(#panel)" stroke="#fff3da"/>
+  <rect x="866" y="118" width="156" height="30" rx="15" fill="#173f6b"/>
+  <text x="890" y="138" font-size="13" fill="#e6f4ff" font-family="Avenir Next, Segoe UI, sans-serif" font-weight="700">CONTROL TOWER</text>
 
-  <g filter="url(#shadow)">
-    <rect x="758" y="76" width="420" height="270" rx="26" fill="#0F2235" fill-opacity="0.28"/>
-    <rect x="778" y="94" width="386" height="236" rx="24" fill="url(#panel)"/>
+  <rect x="874" y="170" width="252" height="72" rx="20" fill="#fffdf9"/>
+  <rect x="898" y="189" width="86" height="36" rx="14" fill="#d7f1e2"/>
+  <text x="924" y="213" font-size="15" fill="#16614a" font-family="Avenir Next, Segoe UI, sans-serif" font-weight="700">PR Risk</text>
+  <rect x="1000" y="189" width="62" height="36" rx="14" fill="#d8ecff"/>
+  <text x="1020" y="213" font-size="15" fill="#145da0" font-family="Avenir Next, Segoe UI, sans-serif" font-weight="700">CI</text>
+  <rect x="1074" y="189" width="56" height="36" rx="14" fill="#ffe3da"/>
+  <text x="1084" y="213" font-size="15" fill="#c2410c" font-family="Avenir Next, Segoe UI, sans-serif" font-weight="700">Policy</text>
 
-    <rect x="804" y="118" width="114" height="30" rx="15" fill="#0C2D48"/>
-    <text x="832" y="138" fill="#D9EEFF" font-size="14" font-family="Avenir Next, Segoe UI, sans-serif" font-weight="700">CONTROL TOWER</text>
-
-    <rect x="804" y="166" width="334" height="84" rx="22" fill="#FFFDF8"/>
-    <rect x="826" y="186" width="116" height="44" rx="16" fill="#D3F4E5"/>
-    <text x="850" y="213" fill="#116149" font-size="17" font-family="Avenir Next, Segoe UI, sans-serif" font-weight="700">PR Risk</text>
-    <rect x="956" y="186" width="84" height="44" rx="16" fill="#D8ECFF"/>
-    <text x="975" y="213" fill="#0E4F8C" font-size="17" font-family="Avenir Next, Segoe UI, sans-serif" font-weight="700">CI</text>
-    <rect x="1052" y="186" width="66" height="44" rx="16" fill="#FFE3DA"/>
-    <text x="1062" y="213" fill="#C2410C" font-size="17" font-family="Avenir Next, Segoe UI, sans-serif" font-weight="700">Policy</text>
-
-    <path d="M824 276H1118" stroke="#0C2D48" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="6 8"/>
-    <circle cx="850" cy="276" r="6" fill="#FF6B35"/>
-    <circle cx="904" cy="276" r="6" fill="#FFB703"/>
-    <circle cx="958" cy="276" r="6" fill="#2A9D8F"/>
-    <circle cx="1012" cy="276" r="6" fill="#145DA0"/>
-    <circle cx="1066" cy="276" r="6" fill="#0C2D48"/>
-
-    <rect x="822" y="288" width="136" height="22" rx="11" fill="#FFF0CC"/>
-    <text x="845" y="303" fill="#9A6700" font-size="12.5" font-family="IBM Plex Mono, Menlo, monospace">blast radius</text>
-    <rect x="970" y="288" width="154" height="22" rx="11" fill="#D8ECFF"/>
-    <text x="992" y="303" fill="#0B4F7A" font-size="12.5" font-family="IBM Plex Mono, Menlo, monospace">release readiness</text>
-  </g>
-
-  <path d="M690 148C732 148 757 160 781 182" stroke="url(#signal)" stroke-width="8" stroke-linecap="round"/>
-  <path d="M676 196C726 197 754 208 781 226" stroke="#FFE082" stroke-width="6" stroke-linecap="round" opacity="0.9"/>
+  <line x1="890" y1="252" x2="1116" y2="252" stroke="#173f6b" stroke-width="2.5" stroke-dasharray="6 8" stroke-linecap="round"/>
+  <circle cx="920" cy="252" r="6" fill="#ff6b35"/>
+  <circle cx="964" cy="252" r="6" fill="#ffb703"/>
+  <circle cx="1008" cy="252" r="6" fill="#2a9d8f"/>
+  <circle cx="1052" cy="252" r="6" fill="#145da0"/>
+  <circle cx="1096" cy="252" r="6" fill="#173f6b"/>
 </svg>

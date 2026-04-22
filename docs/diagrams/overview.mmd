@@ -1,51 +1,24 @@
-flowchart TB
-  subgraph UI["Operator Surfaces"]
-    DASH["Dashboard"]
-    PR["PR Workspace"]
-    REL["Release Center"]
-    GOV["Policy and Audit"]
-  end
+flowchart LR
+  UI[Next.js Web App] --> API[FastAPI API Layer]
+  API --> DS[Seeded Dataset Loader]
+  API --> RISK[Risk Engine]
+  API --> POLICY[Policy Engine]
+  API --> GRAPH[Impact Graph Service]
+  API --> EVAL[Evaluation Service]
+  API --> AUDIT[Audit Service]
+  API --> PG[(PostgreSQL)]
+  API --> REDIS[(Redis)]
+  API --> NEO4J[(Neo4j)]
+  API --> OS[(OpenSearch)]
+  GRAPH --> NEO4J
+  EVAL --> AUDIT
 
-  subgraph API["FastAPI Orchestration"]
-    MAIN["API Layer"]
-    RISK["Risk Service"]
-    POLICY["Policy Service"]
-    GRAPH["Graph Service"]
-    RELEASE["Release Service"]
-    AUDIT["Audit Service"]
-    EVAL["Eval Service"]
-  end
+  classDef entry fill:#dbeafe,stroke:#145DA0,color:#0C2D48,stroke-width:2px;
+  classDef core fill:#dcfce7,stroke:#1f8a70,color:#14532d,stroke-width:2px;
+  classDef service fill:#fff7ed,stroke:#ea580c,color:#9a3412,stroke-width:2px;
+  classDef storage fill:#ede9fe,stroke:#7c3aed,color:#4c1d95,stroke-width:2px;
 
-  subgraph DATA["Data Fabric"]
-    SEED["Seeded Datasets"]
-    PG["PostgreSQL"]
-    REDIS["Redis"]
-    NEO["Neo4j"]
-    OS["OpenSearch"]
-  end
-
-  DASH --> MAIN
-  PR --> MAIN
-  REL --> MAIN
-  GOV --> MAIN
-
-  MAIN --> RISK
-  MAIN --> POLICY
-  MAIN --> GRAPH
-  MAIN --> RELEASE
-  MAIN --> AUDIT
-  MAIN --> EVAL
-
-  GRAPH --> NEO
-  MAIN --> PG
-  MAIN --> REDIS
-  MAIN --> OS
-  MAIN --> SEED
-
-  classDef ui fill:#d7ecff,stroke:#0b4f7a,color:#0c2d48,stroke-width:2px;
-  classDef api fill:#d1f3e2,stroke:#16614a,color:#0c2d48,stroke-width:2px;
-  classDef data fill:#fff1cd,stroke:#b45309,color:#0c2d48,stroke-width:2px;
-
-  class DASH,PR,REL,GOV ui;
-  class MAIN,RISK,POLICY,GRAPH,RELEASE,AUDIT,EVAL api;
-  class SEED,PG,REDIS,NEO,OS data;
+  class UI entry;
+  class API core;
+  class DS,RISK,POLICY,GRAPH,EVAL,AUDIT service;
+  class PG,REDIS,NEO4J,OS storage;
