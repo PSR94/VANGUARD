@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { apiGet } from "@/lib/api/client";
 import { ReleaseApprovalPanel } from "@/components/approvals/release-approval-panel";
 
@@ -13,8 +13,10 @@ type Release = {
 export default function ApprovalsQueuePage() {
   const [release, setRelease] = useState<Release | null>(null);
   const [loading, setLoading] = useState(true);
+  const hasLoaded = useRef(false);
 
   async function loadData() {
+    setLoading(true);
     try {
       const data = await apiGet<Release>("/api/v1/releases/REL-2026.04.3");
       setRelease(data);
@@ -23,8 +25,16 @@ export default function ApprovalsQueuePage() {
     }
   }
 
+  useEffect(() => {
+    if (hasLoaded.current) {
+      return;
+    }
+
+    hasLoaded.current = true;
+    void loadData();
+  }, []);
+
   if (loading && !release) {
-    loadData();
     return <div>Loading...</div>;
   }
 

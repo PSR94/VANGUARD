@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { apiGet } from "@/lib/api/client";
 import { ReleaseApprovalPanel } from "@/components/approvals/release-approval-panel";
 import { ReleaseOverridePanel } from "@/components/approvals/release-override-panel";
@@ -23,8 +23,10 @@ type Release = {
 export default function ReleaseCenterPage() {
   const [data, setData] = useState<{ release: Release; readiness: ReleaseReadiness } | null>(null);
   const [loading, setLoading] = useState(true);
+  const hasLoaded = useRef(false);
 
   async function loadData() {
+    setLoading(true);
     try {
       const releases = await apiGet<Release[]>("/api/v1/releases");
       const selected = releases[0];
@@ -35,8 +37,16 @@ export default function ReleaseCenterPage() {
     }
   }
 
+  useEffect(() => {
+    if (hasLoaded.current) {
+      return;
+    }
+
+    hasLoaded.current = true;
+    void loadData();
+  }, []);
+
   if (loading && !data) {
-    loadData();
     return <div>Loading...</div>;
   }
 
