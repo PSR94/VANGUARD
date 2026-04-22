@@ -1,0 +1,45 @@
+name: Feature request
+description: Propose a scoped product or engineering improvement for the current implementation.
+title: "[feature] "
+labels:
+  - enhancement
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem is this solving?
+      placeholder: Impact Explorer currently exposes raw edges but does not help an operator understand blast radius visually.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed change
+      placeholder: Add a graph view with service clustering, edge legend, and depth controls while keeping the seeded local data model.
+    validations:
+      required: true
+  - type: checkboxes
+    id: areas
+    attributes:
+      label: Affected areas
+      options:
+        - label: frontend
+        - label: backend
+        - label: datasets
+        - label: docs
+        - label: CI or workflow
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      placeholder: |
+        - A user can load the graph for a seeded service
+        - The view communicates depth and relationship type
+        - The existing route contracts stay stable
+    validations:
+      required: true
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes
+      description: Call out dependencies, rollout concerns, or tradeoffs.

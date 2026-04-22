@@ -1,0 +1,41 @@
+name: Docs or UX improvement
+description: Capture a docs gap, workflow rough edge, or UI polish item that is worth tracking explicitly.
+title: "[docs/ux] "
+labels:
+  - docs
+body:
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Type
+      options:
+        - docs
+        - ux
+        - screenshots
+        - onboarding
+    validations:
+      required: true
+  - type: textarea
+    id: gap
+    attributes:
+      label: Current gap
+      placeholder: README setup paths are clear, but the release approval flow still needs a short operator-oriented walkthrough.
+    validations:
+      required: true
+  - type: textarea
+    id: improvement
+    attributes:
+      label: Proposed improvement
+      placeholder: Add a small release operator walkthrough with curl examples and expected UI checkpoints.
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      placeholder: |
+        - The target page or doc is updated
+        - A first-time reader or operator can follow it without guessing
+        - Screenshots are refreshed if the UI changed
+    validations:
+      required: true

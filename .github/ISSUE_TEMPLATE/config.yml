@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Contribution guide
+    url: https://github.com/PSR94/VANGUARD/blob/main/.github/CONTRIBUTING.md
+    about: Read the repo workflow before opening non-trivial issues or PRs.
+  - name: Maintenance docs
+    url: https://github.com/PSR94/VANGUARD/blob/main/docs/project-management/README.md
+    about: Label usage, review guidance, release checklist, and backlog live here.

@@ -1,0 +1,9 @@
+# Solo-maintained today. Keep ownership broad until the repo has stable collaborators.
+* @PSR94
+
+/apps/api/ @PSR94
+/apps/web/ @PSR94
+/datasets/ @PSR94
+/docs/ @PSR94
+/infra/ @PSR94
+/scripts/ @PSR94

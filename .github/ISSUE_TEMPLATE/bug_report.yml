@@ -1,0 +1,55 @@
+name: Bug report
+description: Capture a behavior regression or operational problem with enough detail to reproduce it.
+title: "[bug] "
+labels:
+  - bug
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What is broken?
+      description: Describe the behavior in concrete terms.
+      placeholder: Opening PR Workspace from a fresh dev session leaves the page in a loading state and no analysis controls render.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What should have happened?
+      placeholder: The pull request selector should render and the Analyze action should be available.
+    validations:
+      required: true
+  - type: textarea
+    id: repro
+    attributes:
+      label: Reproduction steps
+      placeholder: |
+        1. Start the API and web app
+        2. Open /pr-workspace
+        3. Select PR-3412
+        4. Click Analyze
+    validations:
+      required: true
+  - type: dropdown
+    id: surface
+    attributes:
+      label: Primary surface
+      options:
+        - frontend
+        - backend
+        - infra
+        - docs
+        - screenshots
+        - ci
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence
+      description: Logs, screenshots, failing route, curl output, or PR link.
+  - type: textarea
+    id: notes
+    attributes:
+      label: Additional context
+      description: Mention risk, affected environments, or any likely cause if you already have one.

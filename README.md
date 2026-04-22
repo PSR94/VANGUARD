@@ -321,6 +321,14 @@ Override requests require actor and rationale and are audit-logged.
 - Release Center: ![Release Center](docs/assets/screenshots/release-center.png)
 - Policy Center: ![Policy Center](docs/assets/screenshots/policy-center.png)
 
+## Project Maintenance
+
+- Contribution guide: [.github/CONTRIBUTING.md](.github/CONTRIBUTING.md)
+- Commit guidance: [docs/project-management/commit-guidelines.md](docs/project-management/commit-guidelines.md)
+- Labels and triage: [docs/project-management/labels.md](docs/project-management/labels.md) and [docs/project-management/triage.md](docs/project-management/triage.md)
+- Review and release discipline: [docs/project-management/review-guidelines.md](docs/project-management/review-guidelines.md) and [docs/project-management/release-checklist.md](docs/project-management/release-checklist.md)
+- Initial backlog: [docs/project-management/initial-backlog.md](docs/project-management/initial-backlog.md)
+
 ## API Overview
 
 Core endpoints:

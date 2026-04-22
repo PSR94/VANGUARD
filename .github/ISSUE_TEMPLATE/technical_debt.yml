@@ -1,0 +1,42 @@
+name: Technical debt
+description: Track cleanup or structural work that improves maintainability without changing the product direction.
+title: "[tech-debt] "
+labels:
+  - tech-debt
+body:
+  - type: textarea
+    id: debt
+    attributes:
+      label: Current debt
+      placeholder: Several client pages call async loaders during render, which can double-fire requests and makes behavior harder to test.
+    validations:
+      required: true
+  - type: textarea
+    id: impact
+    attributes:
+      label: Why it matters
+      placeholder: This makes review harder, increases request noise in development, and creates edge cases in browser automation.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed cleanup
+      placeholder: Move the affected pages to use a consistent load pattern and add targeted regression coverage.
+    validations:
+      required: true
+  - type: textarea
+    id: done
+    attributes:
+      label: Definition of done
+      placeholder: |
+        - Affected routes follow one loading strategy
+        - Double-fetch behavior is removed
+        - Evidence exists in tests or manual verification
+    validations:
+      required: true
+  - type: input
+    id: dependencies
+    attributes:
+      label: Dependency notes
+      placeholder: Depends on issue #12
